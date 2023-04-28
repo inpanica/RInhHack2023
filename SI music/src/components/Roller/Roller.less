@@ -1,0 +1,61 @@
+.roller{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.image-card{
+    box-shadow: 2px 2px 20px rgba(18, 37, 73, 0.2);
+    margin: 20px;
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    transition: .2s;
+    background-size: cover;
+    &:hover{
+        transform: scale(1.025);
+    }
+    &_1{
+        background: url('../../img/Rectangle 1.png');
+    }
+    &_2{
+        background: url('../../img/Rectangle 2.png');
+    }
+    &_3{
+        background: url('../../img/Rectangle 3.png');
+    }
+    &_4{
+        background: url('../../img/Rectangle 4.png');
+    }
+    &_5{
+        background: url('../../img/Rectangle 5.png');
+    }
+    &_6{
+        background: url('../../img/Rectangle 6.png');
+    }
+}
+
+@media (max-width: 1810px) {
+    .roller{
+        justify-content: center;
+    }
+
+}
+
+@media (max-width:600px) {
+    .roller{
+        gap: 10px;
+    }
+    .image-card{
+        background-size: 120px;
+        width: 120px;
+        height: 120px;
+        margin: 0px;
+    }
+}
