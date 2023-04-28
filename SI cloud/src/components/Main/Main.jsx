@@ -64,8 +64,38 @@ const Main = ({fileList, setFileList, ...props}) => {
         filePicker.current.click();
     }
 
+    const dragHandler = (e) => {
+        e.preventDefault();
+    }
+
+    const dragLeaveHandler = (e) => {
+        e.preventDefault();
+    }
+
+    const dropHandler = async (e) => {
+        e.preventDefault();
+        let file = e.dataTransfer.files[0]
+        const formdata = new FormData();
+        formdata.append('fp', fp)
+        formdata.append('file', file)
+        const response = await axios.post('http://190.115.29.135/fileapi/file/', formdata,
+        {headers: {
+            'Content-Type': 'application/vnd.api+json'
+        }})
+        const resp = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/', {
+            fp: fp,
+            delete: 'no',
+            link: ''
+        })
+        setFileList(Object.entries(resp.data.response))
+    }
+
     return (
-        <div className="main_wrap">
+        <div className="main_wrap"
+        onDragStart={e => dragHandler(e)}
+        onDragLeave={e => dragLeaveHandler(e)}
+        onDragOver={e => dragHandler(e)}
+        onDrop={e => dropHandler(e)}>
             <div className="disk_buttons">
                 <input name="file" type="file" id="input__file" className="hiden" onChange={upload} ref={filePicker}/>
                 <Button className="disk_button" disabled={disableBtns} onClick={handleClick}>загрузить</Button>
