@@ -25,9 +25,15 @@ function App() {
                     delete visitorId.components[key]
                 }
             }
+
             delete visitorId.components.canvas
-            delete visitorId.components.screenResolution
-            console.log(visitorId.components);
+            delete visitorId.components.screenResolution 
+            delete visitorId.components.colorDepth 
+            delete visitorId.components.colorGamut 
+            delete visitorId.components.contrast 
+            delete visitorId.components.monochrome
+            delete visitorId.components.userAgent
+
             const response = await postFp(visitorId.components);
             if (response.status === 200){
                 if(response.data.user){
