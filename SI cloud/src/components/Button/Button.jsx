@@ -1,5 +1,5 @@
 import React from 'react'
-import './Button.less'
+import '../Button/Button.less'
 
 const Button = ({children, ...props}) =>{
     return(

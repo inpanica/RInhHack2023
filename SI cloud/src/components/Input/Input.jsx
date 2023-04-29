@@ -1,5 +1,5 @@
 import React from 'react';
-import './Input.less'
+import '../Input/Input.less'
 
 const Input = (props) => {
     return (

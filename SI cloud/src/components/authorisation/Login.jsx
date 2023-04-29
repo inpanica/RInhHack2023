@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.less'
+import '../authorisation/Login.less'
 import Input from '../Input/Input';
 import Button from '../Button/Button'
 import { setUserInfo } from '../../actions/fingerPrint';

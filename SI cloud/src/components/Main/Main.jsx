@@ -1,4 +1,4 @@
-import './main.less'
+import '../Main/Main.less'
 import Button from '../Button/Button'
 import { useState, useRef, useEffect } from 'react'
 import axios from 'axios';

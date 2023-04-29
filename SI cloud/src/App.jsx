@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import './App.css'
-import { postFp, setUserInfo } from './actions/fingerPrint'
-import Navbar from './components/Navbar/Navbar';
-import Main from './components/Main/Main';
+import '../src/App.css'
+import { postFp, setUserInfo } from '../src/actions/fingerPrint'
+import Navbar from '../src/components/Navbar/Navbar';
+import Main from '../src//components/Main/Main';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 import {BrowserRouter, Navigate, Route, Routes, json} from "react-router-dom";
-import Login from './components/authorisation/Login';
+import Login from '../src/components/authorisation/Login';
 import axios from 'axios';
 
 
@@ -13,6 +13,7 @@ function App() {
     const [user, setUser] = useState({name: '', fpKey: ''})
     const [fileList, setFileList] = useState([])
     const [load, setLoad] = useState('')
+
     useEffect(() => {
         const setFp = async () => {
             const fp = await FingerprintJS.load();
@@ -24,6 +25,9 @@ function App() {
                     delete visitorId.components[key]
                 }
             }
+            delete visitorId.components.canvas
+            delete visitorId.components.screenResolution
+            console.log(visitorId.components);
             const response = await postFp(visitorId.components);
             if (response.status === 200){
                 if(response.data.user){

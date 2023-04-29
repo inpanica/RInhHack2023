@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './navbar.less'
+import '../Navbar/Navbar.less'
 
 const Navbar = (props) => {
     return(
