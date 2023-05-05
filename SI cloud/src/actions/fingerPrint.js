@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const postFp = async (content) => {
     try{
-        const response = await axios.post('http://190.115.29.135/hshapi/',{
+        const response = await axios.post('http://85.192.41.43/hshapi/',{
             fp: content
         })
         return response
@@ -17,7 +17,7 @@ export const postFp = async (content) => {
 
 export const setUserInfo = async (name, fp) => {
     try{
-        const response = await axios.post('http://190.115.29.135/userapi/',{
+        const response = await axios.post('http://85.192.41.43/userapi/',{
             username: name,
             fp: fp
         })

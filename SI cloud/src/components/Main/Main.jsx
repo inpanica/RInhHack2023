@@ -16,11 +16,11 @@ const Main = ({fileList, setFileList, ...props}) => {
         const formdata = new FormData();
         formdata.append('fp', fp)
         formdata.append('file', file)
-        const response = await axios.post('http://190.115.29.135/fileapi/file/', formdata,
+        const response = await axios.post('http://85.192.41.43/fileapi/file/', formdata,
         {headers: {
             'Content-Type': 'application/vnd.api+json'
         }})
-        const resp = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/', {
+        const resp = await axios.post('http://85.192.41.43/fileapi/file/downloaddelete/', {
             fp: fp,
             delete: 'no',
             link: ''
@@ -44,12 +44,12 @@ const Main = ({fileList, setFileList, ...props}) => {
             let i = ''
             for(i in fileList){
                 if(fileList[i][0] === currentFile){
-                    const response = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/',{
+                    const response = await axios.post('http://85.192.41.43/fileapi/file/downloaddelete/',{
                         fp: fp,
                         delete: 'yes',
                         link: fileList[i][1]
                     })
-                    const resp = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/', {
+                    const resp = await axios.post('http://85.192.41.43/fileapi/file/downloaddelete/', {
                         fp: fp,
                         delete: 'no',
                         link: ''
@@ -78,11 +78,11 @@ const Main = ({fileList, setFileList, ...props}) => {
         const formdata = new FormData();
         formdata.append('fp', fp)
         formdata.append('file', file)
-        const response = await axios.post('http://190.115.29.135/fileapi/file/', formdata,
+        const response = await axios.post('http://85.192.41.43/fileapi/file/', formdata,
         {headers: {
             'Content-Type': 'application/vnd.api+json'
         }})
-        const resp = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/', {
+        const resp = await axios.post('http://85.192.41.43/fileapi/file/downloaddelete/', {
             fp: fp,
             delete: 'no',
             link: ''

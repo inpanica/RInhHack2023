@@ -59,13 +59,12 @@ function App() {
                 setLoad('')
             }
             if(load === 'login'){
-                const resp = await axios.post('http://190.115.29.135/fileapi/file/downloaddelete/', {
+                const resp = await axios.post('http://85.192.41.43/fileapi/file/downloaddelete/', {
                     fp: user.fpKey,
                     delete: 'no',
                     link: ''
                 })
                 setFileList(Object.entries(resp.data.response))
-                alert(`fp: ${user.fpKey}`)
                 setLoad('')
             }
         }
